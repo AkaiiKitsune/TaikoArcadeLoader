@@ -18,8 +18,7 @@ jobs:
       - name: Build
         run: cmake --build build --config Release
       - name: Copy bnusio.dll
-        run: |
-          copy build\Release\bnusio.dll dist\
+        run: copy build\Release\bnusio.dll dist
       - name: Zip dist folder
         run: powershell Compress-Archive -Path dist\* -DestinationPath dist.zip
       - uses: actions/upload-artifact@v3
